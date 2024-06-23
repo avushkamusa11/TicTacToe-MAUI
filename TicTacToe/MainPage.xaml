@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TicTacToe"
+             x:Class="TicTacToe.MainPage">
+
+    <Grid RowDefinitions="Auto, *">
+        <VerticalStackLayout>
+            <Label x:Name="player" HorizontalTextAlignment="Center" Text="player turn">
+            </Label>
+            <Label x:Name="xWinningsCount" HorizontalTextAlignment="Center" Text="0" />
+            <Label x:Name="oWinningsCount" HorizontalTextAlignment="Center" Text="0" />
+            
+
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="1"
+              SizeChanged="Grid_SizeChanged" >
+            <local:Board x:Name="board" />
+            <Button x:Name="startNewGame"
+                    Text="New game"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="startNewGame_Clicked" />
+        </Grid>
+    </Grid>
+
+</ContentPage>
